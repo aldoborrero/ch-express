@@ -3,7 +3,11 @@ var express = require('express'),
     fs = require('fs'),
     _ = require('lodash');
 
-/* GET home page. */
+/* GET random photo. */
+router.get('/', function(req, res) {
+  res.json({message: "The API is in another castle!"})
+});
+
 router.get('/v1/', function(req, res) {
   fs.readdir(__dirname + '/../public/img', function(err, files) {
     if (err) {
